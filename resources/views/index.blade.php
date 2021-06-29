@@ -24,6 +24,12 @@
         <button formaction="/pegawai/tambah">+ Tambah Pegawai Baru</button>
     </form>
 
+    <p>Pencarian:</p>
+    <form action="/pegawai/cari" method="GET">
+        <input type="text" name="cari" placeholder="Cari Pegawai..." value="{{ old('cari') }}">
+        <input type="submit" value="Search">
+    </form>
+
     <br>
     <br>
 
