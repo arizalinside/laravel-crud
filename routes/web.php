@@ -34,3 +34,7 @@ Route::get('/pegawai/cari', [PegawaiController::class, 'cari']);
 Route::post('/pegawai/store', [PegawaiController::class, 'store']);
 
 Route::post('/pegawai/update', [PegawaiController::class, 'update']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
