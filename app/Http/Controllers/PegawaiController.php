@@ -11,7 +11,7 @@ class PegawaiController extends Controller
     public function index()
     {
         // mengambil data dari table pegawai
-        $pegawai = DB::table('pegawai')->get();
+        $pegawai = DB::table('pegawai')->paginate(15);
 
         // mengirim data pegawai ke view index
         return view('index', ['pegawai' => $pegawai]);
@@ -39,7 +39,7 @@ class PegawaiController extends Controller
         return redirect('/pegawai');
     }
 
-    // method untuk menampilkan view form edit pegawai
+    // method untuk menampilkan view form edit ppaginatew10ai
     public function edit($id)
     {
         // mengambil data pegawai berdasarkan id yang dipilih

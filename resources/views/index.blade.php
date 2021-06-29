@@ -9,6 +9,15 @@
 </head>
 
 <body>
+
+    <style type="text/css">
+        .pagination li {
+            float: left;
+            list-style-type: none;
+            margin: 5px;
+        }
+    </style>
+
     <h3>Data Pegawai</h3>
 
     <form>
@@ -39,6 +48,15 @@
         </tr>
         @endforeach
     </table>
+
+    <br>
+    Halaman: {{ $pegawai->currentPage() }} <br>
+    Jumlah data: {{ $pegawai->total() }} <br>
+    Data per halaman: {{ $pegawai->perPage() }} <br>
+
+    {{ $pegawai->links('pagination::bootstrap-4') }}
+
+
 </body>
 
 </html>
