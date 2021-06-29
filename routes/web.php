@@ -3,6 +3,7 @@
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\BlogController;
+use Database\Seeders\PegawaiSeeder;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,6 +28,8 @@ Route::get('/pegawai/tambah', [PegawaiController::class, 'tambah']);
 Route::get('/pegawai/edit/{id}', [PegawaiController::class, 'edit']);
 
 Route::get('/pegawai/hapus/{id}', [PegawaiController::class, 'hapus']);
+
+Route::get('/pegawai/cari', [PegawaiController::class, 'cari']);
 
 Route::post('/pegawai/store', [PegawaiController::class, 'store']);
 
