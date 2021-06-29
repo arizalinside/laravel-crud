@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 
 class PegawaiController extends Controller
 {
+    // method untuk menampilkan view form pegawai
     public function index()
     {
         // mengambil data dari table pegawai
@@ -16,6 +17,7 @@ class PegawaiController extends Controller
         return view('index', ['pegawai' => $pegawai]);
     }
 
+    // method untuk menampilkan view form tambah pegawai
     public function tambah()
     {
         // memanggil view tambah
@@ -37,6 +39,7 @@ class PegawaiController extends Controller
         return redirect('/pegawai');
     }
 
+    // method untuk menampilkan view form edit pegawai
     public function edit($id)
     {
         // mengambil data pegawai berdasarkan id yang dipilih
