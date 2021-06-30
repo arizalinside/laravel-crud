@@ -6,27 +6,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laravel CRUD</title>
+    <script src="{{ asset('js/app.js') }}" defer></script>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
 </head>
 
 <body>
-    <h3>Data Pegawai</h3>
+    <div class="container-fluid">
+        <a href="/pegawai" style="text-decoration: none; color: inherit;">
+            <h1 class="text-center mt-3 font-weight-bold">TAMBAH DATA PEGAWAI</h1>
+        </a>
 
-    <form>
-        <button formaction="/pegawai">
-            < Kembali</button>
-    </form>
+        <a class="btn btn-primary font-weight-bold" href="/pegawai" style="margin: 2rem;">
+            < Kembali</a>
 
-    <br>
-    <br>
-
-    <form action="/pegawai/store" method="post">
-        {{ csrf_field() }}
-        Nama <input type="text" name="nama" required="required"> <br>
-        Jabatan <input type="text" name="jabatan" required="required"> <br>
-        Umur <input type="number" name="umur" required="required"> <br>
-        Alamat <textarea name="alamat" required="required"></textarea> <br><br>
-        <input type="submit" value="Simpan Data">
-    </form>
+                <div class="card" style="width: 40%; margin:0 auto; margin-bottom: 2rem;">
+                    <form action="/pegawai/store" method="post" class="p-3">
+                        {{ csrf_field() }}
+                        <div class="form-group">
+                            <label for="nama" class="font-weight-bold">Nama</label>
+                            <input type="text" class="form-control" name="nama" required="required"> <br>
+                        </div>
+                        <div class="form-group">
+                            <label for="jabatan" class="font-weight-bold">Jabatan</label>
+                            <input type="text" class="form-control" name="jabatan" required="required"> <br>
+                        </div>
+                        <div class="form-group">
+                            <label for="umur" class="font-weight-bold">Umur</label>
+                            <input type="number" class="form-control" name="umur" required="required"> <br>
+                        </div>
+                        <div class="form-group">
+                            <label for="alamat" class="font-weight-bold">Alamat</label>
+                            <textarea name="alamat" class="form-control" required="required"></textarea>
+                        </div>
+                        <input class="btn btn-success btn-block" type="submit" value="Simpan Data">
+                    </form>
+                </div>
+    </div>
 </body>
 
 </html>
